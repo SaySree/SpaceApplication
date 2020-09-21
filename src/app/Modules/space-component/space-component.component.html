@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2" style="border: 1px solid;margin-top: 5px;">
+            <header class="sideHeader">Filter</header>
+            <div>
+                <section style="text-align: center;">Launch Year</section>
+            <hr>
+            <div class="box1">
+              <button role="button" aria-labelledby={{year}} *ngFor="let year of arrayofYrs" [routerLink]="['/space']" [queryParams]="{launch_year:year}" (click)="onClickFilter($event,'launch_year')">{{year}}</button>
+            </div>
+            <section style="text-align: center;">Successful Launch</section>
+            <hr>
+            <div class="box1">
+                <button role="button" aria-labelledby={{value}} *ngFor="let value of truefalseCombination" [routerLink]="['/space']"  [queryParams]="{launch_success:value}" (click)="onClickFilter($event,'launch_success')">{{value}}</button>
+            </div>
+            <section style="text-align: center;">Successful Landing</section>
+            <hr>
+            <div class="box1">
+                <button role="button" aria-labelledby={{value}} *ngFor="let value of truefalseCombination" [routerLink]="['/space']"  [queryParams]="{land_success:value}" (click)="onClickFilter($event,'land_success')">{{value}}</button>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <div *ngIf="loaded">
+            <div class="box2">
+                <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let option of data">
+                  <div class="imageBase">
+                      <div>
+                        <img class="img-fluid imgBg" alt="Broken Image" [src]=option?.links.mission_patch />
+                      </div>
+                    <div>
+                    <p class="spaceDetails">{{option?.mission_name}}#{{option?.flight_number}}</p>
+                    <p class="MissionId">Mission Ids:</p>
+                    <li>{{option?.mission_id}}</li>
+                    <p class="MissionId">Launch Year:<span class="spaceDetails">{{option?.launch_year}}</span></p>
+                    <p class="MissionId">Successful Launch:<span class="spaceDetails">{{option?.launch_success}}</span></p>
+                    <p class="MissionId">Successful Landing:<span class="spaceDetails">{{option?.rocket?.first_stage.cores[0].land_success}}</span></p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+            <div class="noContent" *ngIf="!loaded">
+                No Item to display
+            </div>
+
+        </div>
+    </div>
+</div>
+

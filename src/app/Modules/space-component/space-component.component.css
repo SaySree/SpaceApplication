@@ -1,0 +1,73 @@
+@media (min-width: 1200px){
+    .container {
+        max-width: 1320px;
+    }
+    .box2>* {
+        margin: 5px;
+        border: 1px solid;
+        flex: 0 0 24%;
+    }
+}
+
+.sideHeader{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.box1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.box1>* {
+    background-color: #a3e66575;
+    margin: 10px;
+    width: 32%;
+    border: 1px solid;
+    padding: 0;
+}
+.box2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+}
+
+
+
+hr {
+    margin-top: 0; 
+    margin-bottom: 0;
+}
+
+.box1 button:hover {
+    background:#a3e665fc;
+}
+
+
+.imageBase {
+    padding: 15px;
+}
+
+.imgBg {
+    background: #e9ecef;
+}
+
+.spaceDetails{
+    margin-top: 1rem;
+    font-weight: 700;
+    color: #5757b5;  
+}
+
+.MissionId{
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.noContent{
+    font-size: 35px;
+    font-weight: 400;
+    position: relative;
+    text-align: center;
+    top: 46%;
+}
